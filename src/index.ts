@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import sql from "mssql";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -17,6 +17,9 @@ const config: sql.config = {
   },
 };
 
+app.get('/', (req, res) => {
+    res.send('MS SQL API is running!');
+});
 
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
